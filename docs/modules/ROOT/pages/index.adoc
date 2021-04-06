@@ -1,32 +1,172 @@
-= Welcome to Component B!
+= Movie API Guide
 
-This is the automatic start page for version *{page-component-version}* of Component B.
+Documentation version *{page-component-version}* of Movie API
 
-Component B is one of two documentation components in the Antora Demo.
-The other docs component, Component A, can be accessed via the component selector menu (aka component drawer) at the bottom of the menu on the left side of the page.
+= API/movies
 
-== Page source
 
-This page is sourced from the AsciiDoc file named [.path]_index.adoc_ that is located at [.path]_demo-component-b/docs/modules/ROOT/pages_.
+=== Supported Methods
+    GET
+    POST
 
-=== Why is this the home page of Component B?
+=== Field data type
+    String
 
-This page is automatically used as the start page of Component B because it is stored in the ROOT module and named [.path]_index.adoc_.
+=== Retrieve list of movies
 
-=== Why is this the home page of the Antora Demo site?
+    Method:GET
+    Authentication : Bearer
 
-This page is used as the home page for the Antora Demo because it is assigned as the site `start_page` in the Demo site's playbook file [.path]_site.yml_.
+Sample Response: 
 
-== Cross reference syntax to target this page
+[source]
+----
+[
+    {
+        "id": 1,
+        "data": {
+            "title": "A Walk to Remember",
+            "original_title": "A Walk to Remember",
+            "description": "Landon is assigned community service after getting in trouble. His punishment also involves participating in the spring play, during which he falls in love with Jamie, the reverend's daughter",
+            "released": "2002-01-23",
+            "studio": "Warner Bros. Pictures",
+            "tags": [
+                "test1",
+                "test2"
+            ],
+            "genres": [
+                "romance",
+                "drama"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "data": {
+            "title": "A Few Good Men",
+            "original_title": "A Few Good Men",
+            "description": "Daniel Kaffee, a US military lawyer, defends two US marines charged with murdering a fellow marine at the Guantanamo Bay Naval Base in Cuba. The needle of suspicion, thus, points to a colonel",
+            "released": "1992-12-09",
+            "studio": "Columbia Pictures",
+            "tags": [
+                "test1",
+                "test2"
+            ],
+            "genres": [
+                "drama",
+                "Legal"
+            ]
+        }
+    }
+]
+----
+=== Create a movie
 
-To create a cross reference *to this page from another page in the ROOT module of Component B*, the xref syntax would be `\xref:index.adoc[]`.
+    Method:POST
+    Authentication : Bearer
 
-To create a cross reference *to this page from a page in Module One of Component B*, the xref syntax would be `\xref:ROOT:index.adoc[]`.
+Sample Request: 
 
-=== Always target the latest version of this page
+[source]
+----
+{
+    "data": {
+        "tags": ["test1","test2"],
+        "studio": "Columbia Pictures",
+        "title": "A Few Good Men",
+        "original_title": "A Few Good Men",
+        "description": "Daniel Kaffee, a US military lawyer, defends two US marines charged with murdering a fellow marine at the Guantanamo Bay Naval Base in Cuba. The needle of suspicion, thus, points to a colonel",
+        "released": "1992-12-09",
+        "genres": ["Legal","drama"]
+    }
+}
+----
 
-To create a cross reference *to the latest version of this page from a page in Component A*, the xref syntax would be `\xref:component-b::index.adoc[]`.
+Sample Response: 
 
-=== Target a specific version of this page
+[source]
+----
+{
+    "id": 2,
+    "data": {
+        "title": "A Few Good Men",
+        "original_title": "A Few Good Men",
+        "description": "Daniel Kaffee, a US military lawyer, defends two US marines charged with murdering a fellow marine at the Guantanamo Bay Naval Base in Cuba. The needle of suspicion, thus, points to a colonel",
+        "released": "1992-12-09",
+        "studio": "Columbia Pictures",
+        "tags": [
+            "test1",
+            "test2"
+        ],
+        "genres": [
+            "drama",
+            "Legal"
+        ]
+    }
+}
+----
 
-To create a cross reference *to version 1.0 of this page from a page in Component A*, the xref syntax would be `\xref:1.0@component-b::index.adoc[]`.
+
+= API/movies/{id}/
+
+=== Supported Methods
+    PUT
+    DELETE
+
+=== Update movie data
+
+    Method:PUT
+    Authentication : Bearer
+
+Sample Request: 
+
+[source]
+----
+{
+    "data": {
+        "tags": ["test1","test2"],
+        "studio": "Columbia Pictures",
+        "title": "A Few Good Men",
+        "original_title": "A Few Good Men",
+        "description": "Daniel Kaffee, a US military lawyer, defends two US marines charged with murdering a fellow marine at the Guantanamo Bay Naval Base in Cuba. The needle of suspicion, thus, points to a colonel",
+        "released": "1992-12-09",
+        "genres": ["Legal","drama"]
+    }
+}
+----
+
+Sample Response: 
+
+[source]
+----
+{
+    "id": 2,
+    "data": {
+        "title": "A Few Good Men",
+        "original_title": "A Few Good Men",
+        "description": "Daniel Kaffee, a US military lawyer, defends two US marines charged with murdering a fellow marine at the Guantanamo Bay Naval Base in Cuba. The needle of suspicion, thus, points to a colonel",
+        "released": "1992-12-09",
+        "studio": "Columbia Pictures",
+        "tags": [
+            "test1",
+            "test2"
+        ],
+        "genres": [
+            "drama",
+            "Legal"
+        ]
+    }
+}
+----
+
+=== Delete a movie
+
+    Method:DELETE
+    Authentication : Bearer
+
+Sample Response: 
+
+[source]
+----
+Status: 200 OK
+----
