@@ -19,7 +19,7 @@ Documentation version *{page-component-version}* of Movie API
 
 Sample Response: 
 
-image::health.PNG[]
+image::../assets/health.PNG[]
 
 
 = /api/version/
