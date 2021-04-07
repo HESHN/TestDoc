@@ -1,13 +1,14 @@
 = Movie API Guide
 
-Documentation version *{page-component-version}* of Movie API
+Documentation of Movie API version *{page-component-version}*
 
-= API/movies
+= Developer Guide
 
 
-=== Supported Methods
-    GET
-    POST
+=== Logging Dashboard
+
+
+
 
 === Field data type
     String
@@ -15,7 +16,7 @@ Documentation version *{page-component-version}* of Movie API
 === Retrieve list of movies
 
     Method:GET
-    Authentication : Bearer
+    Authentication : Basic
 
 Sample Response: 
 
@@ -63,7 +64,7 @@ Sample Response:
 === Create a movie
 
     Method:POST
-    Authentication : Bearer
+    Authentication : Basic
 
 Sample Request: 
 
@@ -116,7 +117,7 @@ Sample Response:
 === Update movie data
 
     Method:PUT
-    Authentication : Bearer
+    Authentication : Basic
 
 Sample Request: 
 
@@ -162,7 +163,7 @@ Sample Response:
 === Delete a movie
 
     Method:DELETE
-    Authentication : Bearer
+    Authentication : Basic
 
 Sample Response: 
 
