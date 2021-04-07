@@ -1,1 +1,2 @@
 * xref:index.adoc[Endpoints]
+* xref:admin.adoc[Administrations]
