@@ -1,6 +1,6 @@
 = Movie API Guide
 
-Documentation version *{page-component-version}* of Movie API
+Documentation version 2 *{page-component-version}* of Movie API
 
 = API/movies
 
