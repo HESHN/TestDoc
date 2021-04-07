@@ -15,7 +15,7 @@ Documentation version *{page-component-version}* of Movie API
 === Retrieve list of movies
 
     Method:GET
-    Authentication : Bearer
+    Authentication : Basic
 
 Sample Response: 
 
@@ -63,7 +63,7 @@ Sample Response:
 === Create a movie
 
     Method:POST
-    Authentication : Bearer
+    Authentication : Basic
 
 Sample Request: 
 
