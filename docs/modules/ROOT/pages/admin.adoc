@@ -1,8 +1,11 @@
+:moduledir:..
+:imagesdir:{moduledir}/assets/images
+
 = Movie API admin endpoints
 
 Documentation version *{page-component-version}* of Movie API
 
-= /health
+== /health
 
 
 === Supported Methods
@@ -19,7 +22,7 @@ Documentation version *{page-component-version}* of Movie API
 
 Sample Response: 
 
-image::../assets/health.PNG[]
+image::health.PNG[]
 
 
 = /api/version/
